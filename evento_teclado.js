@@ -22,10 +22,14 @@ for (let contador = 0; contador < listaDeTeclas.length; contador ++) {
 
     // add a classe ativa do css, para quando clicar nos botões com alguma tecla
     // do teclado neste caso ENTER ou BARRA DE ESPAÇO, deixa da cor vermelha 
-    tecla.onkeydown = function () {
-        tecla.classList.add('ativa');
-    }
+    tecla.onkeydown = function (evento) {
 
+        console.log(evento.code == 'Space' ) 
+
+        if (evento.code === 'Space') {
+            tecla.classList.add('ativa');
+        } 
+    }
 
     // Caso mantenha a tecla ENTER ou ESPAÇO pressionada ela fica da cor vermelha, caso
     // solte ela volta para a cor de origem
